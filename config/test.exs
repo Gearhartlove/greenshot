@@ -6,10 +6,8 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :greenshot, Greenshot.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "greenshot_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database:
+    Path.expand("../priv/greenshot_test#{System.get_env("MIX_TEST_PARTITION")}.db", __DIR__),
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 
