@@ -1,10 +1,7 @@
 import Config
 
 # Configure your database
-config :greenshot, Greenshot.Repo,
-  database: Path.expand("../priv/greenshot.db", __DIR__)
-
-
+config :greenshot, Greenshot.Repo, database: Path.expand("../priv/greenshot.db", __DIR__)
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
